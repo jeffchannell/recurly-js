@@ -1,5 +1,6 @@
 input#tos_check(type="checkbox")
-label#accept_tos(for="tos_check") I accept the 
-  a.tos_link(target="_blank") Terms of Service
-  span.and\ and\ 
-  a.pp_link(target="_blank") Privacy Policy
+label#accept_tos(for="tos_check") #{locale.terms_of_service.accept} 
+  a.tos_link(target="_blank") #{locale.terms_of_service.terms}
+  span.and\ #{locale.terms_of_service.and}\ 
+  a.pp_link(target="_blank") #{locale.terms_of_service.privacy}
+  #{locale.terms_of_service.end}

@@ -26,17 +26,24 @@ DOM_SOURCES = $(addprefix src/dom/, \
 	terms_of_service.jade \
 )
 
-all: node_modules build build/recurly.min.js themes/default/recurly.css
+all: node_modules build build/recurly.min.js build/recurly.fr.min.js themes/default/recurly.css
 
 build:
 	mkdir -p build
 
 build/recurly.js: $(JS_SOURCES) $(DOM_SOURCES)
-	$(COMPILER) $^ > $@
+	$(COMPILER) en $^ > $@
+
+build/recurly.fr.js: $(JS_SOURCES) $(DOM_SOURCES)
+	$(COMPILER) fr $^ > $@
 
 build/recurly.min.js: build/recurly.js
 	rm -f build/recurly.min.js
 	$(YUI_COMPRESSOR) build/recurly.js -o build/recurly.min.js
+
+build/recurly.fr.min.js: build/recurly.fr.js
+	rm -f build/recurly.fr.min.js
+	$(YUI_COMPRESSOR) build/recurly.fr.js -o build/recurly.fr.min.js
 
 themes/default/recurly.css: themes/default/recurly.styl
 	$(STYLUS) $^

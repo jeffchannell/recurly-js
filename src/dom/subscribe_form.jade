@@ -2,18 +2,18 @@ form.recurly.subscribe
   //if lt IE 7
     div.iefail
       div.chromeframe
-        p.blast Your browser is not supported by Recurly.js.
+        p.blast #{locale.subscribe_form.iefail.blast}
         p
-          a(href="http://browsehappy.com/") Upgrade to a different browser
-        p or
+          a(href="http://browsehappy.com/") #{locale.subscribe_form.iefail.upgrade}
+        p #{locale.subscribe_form.iefail.or}
         p
-          a(href="http://www.google.com/chromeframe/?redirect=true") install Google Chrome Frame
-        p to use this site.
+          a(href="http://www.google.com/chromeframe/?redirect=true") #{locale.subscribe_form.iefail.chromeframe}
+        p #{locale.subscribe_form.iefail.use}
   .subscription
     .plan 
       .name 
       .field.quantity
-        .placeholder Qty
+        .placeholder #{locale.subscribe_form.subscription.qty}
         input(type="text")
 
       .recurring_cost
@@ -23,7 +23,7 @@ form.recurly.subscribe
       .free_trial
 
       .setup_fee
-        .title Setup Fee
+        .title #{locale.subscribe_form.subscription.setup_fee}
         .cost
 
 
@@ -31,18 +31,18 @@ form.recurly.subscribe
 
     .coupon
       .coupon_code.field
-        .placeholder Coupon Code
+        .placeholder #{locale.subscribe_form.subscription.coupon}
         input.coupon_code(type="text")
       .check
       .description
       .discount
 
     .vat
-      .title VAT
+      .title #{locale.subscribe_form.subscription.vat}
       .cost
 
   .due_now
-    .title Order Total
+    .title #{locale.subscribe_form.due}
     .cost 
 
   .server_errors.none
@@ -54,4 +54,4 @@ form.recurly.subscribe
   .accept_tos
  
   .footer
-    button.submit(type='submit') Subscribe
+    button.submit(type='submit') #{locale.subscribe_form.subscribe}
