@@ -9,7 +9,9 @@ var fs = require('fs')
   , jade = require('jade')
   , async = require('async');
 
-var argParts = process.argv.slice(2).map(function(file) {
+var argLocale = process.argv[2];
+
+var argParts = process.argv.slice(3).map(function(file) {
   if(file.match(/.*\.jade$/))
     return jadePart(file);
   else
@@ -60,9 +62,10 @@ function jsPart(jsfile) {
 function jadePart(jadefile) {
   return function(done) {
     var key = jadefile.match('.*/(.+)\.jade$')[1];
-    var jadestr = fs.readFileSync(jadefile); 
+    var jadestr = fs.readFileSync(jadefile);
+    var locale = require('../locales/' + argLocale + '.js');
 
-    jade.render(jadestr, {filename: jadefile}, function(err,html) {
+    jade.render(jadestr, {filename: jadefile, locale: locale}, function(err,html) {
       html = html.replace(/\n/g,'');
       var jsstr = leader(jadefile);
       jsstr += 'R.dom[\''+key+'\'] = \'' + html.replace(/\'/g,'\\\'') + '\';'

@@ -1,4 +1,4 @@
-.title Billing Info
+.title #{locale.billing_info_fields.title}
 
 .payment_method.multiple
   input(type="hidden")
@@ -12,24 +12,24 @@
 
 .credit_card
   .field.first_name
-    .placeholder First Name
+    .placeholder #{locale.billing_info_fields.credit_card.first_name}
     input(type="text")
 
   .field.last_name
-    .placeholder Last Name
+    .placeholder #{locale.billing_info_fields.credit_card.last_name}
     input(type="text")
 
   .card_cvv
     .field.card_number
-      .placeholder Credit Card Number
+      .placeholder #{locale.billing_info_fields.credit_card.card_number}
       input(type="text")
 
     .field.cvv
-      .placeholder CVV 
+      .placeholder #{locale.billing_info_fields.credit_card.cvv} 
       input(type="text")
 
   .field.expires
-    .title Expires
+    .title #{locale.billing_info_fields.credit_card.expires}
     .month
       select
         include months.jade
@@ -38,24 +38,24 @@
 
 .address
   .field.address1
-    .placeholder Address
+    .placeholder #{locale.billing_info_fields.address.address1}
     input(type="text")
 
   .field.address2
-    .placeholder Apt/Suite
+    .placeholder #{locale.billing_info_fields.address.address2}
     input(type="text")
 
   .field.city
-    .placeholder City
+    .placeholder #{locale.billing_info_fields.address.city}
     input(type="text")
 
   .state_zip
     .field.state
-      .placeholder State/Province
+      .placeholder #{locale.billing_info_fields.address.state}
       input(type="text")
 
     .field.zip
-      .placeholder Zip/Postal
+      .placeholder #{locale.billing_info_fields.address.zip}
       input(type="text")
 
   .field.country
@@ -63,14 +63,14 @@
       include countries.jade
 
 .field.vat_number
-  .placeholder VAT Number
+  .placeholder #{locale.billing_info_fields.vat_number}
   input(type="text")
 
 .paypal
   .paypal_message.
-    You will be taken to PayPal to authorize a billing agreement.
+    #{locale.billing_info_fields.paypal.authorize}
     <br><br>
-    Please make sure pop-ups aren't blocked.
+    #{locale.billing_info_fields.paypal.popups}
 
 
 
