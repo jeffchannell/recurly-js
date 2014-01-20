@@ -20,7 +20,7 @@
     // in client libraries.
     signature: 'needs-server-support-code',
     successURL: 'confirmation.html',
-    planCode: 'simpleplan',
+    planCode: 'complexplan',
     distinguishContactFromBillingInfo: true,
     collectCompany: true,
     collectContact: false,
@@ -28,9 +28,12 @@
     acceptPaypal: true,
     acceptedCards: ['mastercard',
                     'discover',
-                    'american_express', 
+                    'american_express',
                     'visa'],
     acceptPaypal: true,
+    subscription: {
+      couponCode: '123'
+    },
     account: {
       firstName: 'Joe',
       lastName: 'User',

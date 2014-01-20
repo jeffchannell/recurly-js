@@ -5,7 +5,7 @@ function createObject(o) {
   return new F();
 };
 
-var R = {}; 
+var R = {};
 R.settings = {
   enableGeoIP: true
 , acceptedCards: ['visa', 'mastercard', 'discover', 'american_express']
@@ -29,15 +29,30 @@ R.raiseError = function(message) {
 };
 
 
-R.config = function(settings) { 
-  $.extend(true, R.settings, settings); 
+R.config = function(settings) {
+  $.extend(true, R.settings, settings);
 
   if(!settings.baseURL) {
     var subdomain = R.settings.subdomain || R.raiseError('company subdomain not configured');
-    R.settings.baseURL = 'https://'+subdomain+'.recurly.com/jsonp/'+subdomain+'/'; 
+    R.settings.baseURL = 'https://'+subdomain+'.recurly.com/jsonp/'+subdomain+'/';
   }
+
+  R.settings.origin = parseURL(R.settings.baseURL).origin;
 };
 
+function parseURL(url) {
+  var a = document.createElement('a');
+  a.href = url;
+  return {
+      href: a.href
+    , host: a.host
+    , port: a.port
+    , hostname: a.hostname
+    , pathname: a.pathname
+    , protocol: a.protocol
+    , origin: a.protocol + '//' + a.host
+  };
+}
 
 function pluralize(count, term) {
   if(count == 1) {
@@ -55,7 +70,7 @@ function pluralize(count, term) {
 //
 
 (R.Cost = function(cents) {
-  this._cents = cents || 0; 
+  this._cents = cents || 0;
 }).prototype = {
   toString: function() {
     return R.formatCurrency(this.dollars());
@@ -87,7 +102,7 @@ function pluralize(count, term) {
 
 R.Cost.FREE = new R.Cost(0);
 
-(R.TimePeriod = function(length,unit) { 
+(R.TimePeriod = function(length,unit) {
     this.length = length;
     this.unit = unit;
 }).prototype = {

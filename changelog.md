@@ -1,4 +1,34 @@
-#Recurly.js CHANGELOG
+#Change Log
+
+##Version 2.2.9 (Dec 3, 2013)
+
+- fixed; billing info prefill selectors #98 [lancekruegger](https://github.com/lancekruegger)
+
+##Version 2.2.8 (Nov 15, 2013)
+
+- fixed; removing an addon with a negative quantity and re-adding it resets the quantity to 1 #92
+- fixed; setting addon quantity to a negative value contributes 0 to the total #92
+- fixed; setting addon quantity to 0 removes it #92
+- fixed; addons have a default quantity of "1" if quantity is allowed #91
+- docs; fix release notes format
+- docs; added release documentation
+- docs; updated for contributors and employees
+- make; add `make release`
+
+##Version 2.2.7 (Oct 18, 2013)
+
+- Sort states by display name #88 [drewish](https://github.com/drewish)
+- BillingInfo expects a reference to the account #87 [drewish](https://github.com/drewish)
+- Remove trailing whitespace #86 [drewish](https://github.com/drewish)
+
+##Version 2.2.6 (Aug 28, 2013)
+- Issue fixed where coupon descriptions could show "null"
+
+##Version 2.2.5 (Aug 28, 2013)
+- Added default subscription: quantity option to buildSubscriptionForm
+
+##Version 2.2.4 (Aug 23, 2013)
+- Workaround a bug in jQuery 1.9 that throws style undefined exceptions.
 
 ##Version 2.2.3 (Aug 13, 2013)
 - Fix an issue where first/last name show up for PayPal when distinguishContactFromBillingInfo is true
@@ -12,7 +42,7 @@
 
 ##Version 2.2.0 (May 29, 2013)
 
-- Add support for PayPal 
+- Add support for PayPal
 - Use subdomains in JSONP URLs for DNS loadbalancing
 
 ##Version 2.1.3 (May 22, 2012)

@@ -26,9 +26,9 @@ R.Subscription = {
 
     totals.stages.now = totals.plan.add(totals.allAddOns);
 
-    // FREE TRIAL 
+    // FREE TRIAL
     if(this.plan.trial) {
-      totals.stages.now = R.Cost.FREE; 
+      totals.stages.now = R.Cost.FREE;
     }
 
     // SETUP FEE
@@ -45,7 +45,7 @@ R.Subscription = {
         discount = this.coupon.discountFixed;
       else
         discount = beforeDiscount.sub(this.plan.setupFee || 0).mult(this.coupon.discountRatio);
-      
+
       var afterDiscount = beforeDiscount.sub(discount);
 
       if(afterDiscount.cents() < 0) {
@@ -66,7 +66,7 @@ R.Subscription = {
   }
 , redeemAddOn: function(addOn) {
   var redemption = addOn.createRedemption();
-  this.addOns.push(redemption); 
+  this.addOns.push(redemption);
   return redemption;
 }
 
@@ -156,7 +156,7 @@ R.Coupon = {
     else if(json.discount_percent)
       c.discountRatio = json.discount_percent/100;
 
-    c.description = json.description;
+    c.description = json.description || '';
 
     return c;
   }
