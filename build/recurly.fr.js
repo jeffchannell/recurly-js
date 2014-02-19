@@ -2410,7 +2410,7 @@ R.states.CA = {
 // Compiled from src/dom/contact_info_fields.jade
 //////////////////////////////////////////////////
 
-R.dom['contact_info_fields'] = '<div class="title">Contact Info</div><div class="full_name"><div class="field first_name"><div class="placeholder">Prénom </div><input type="text"/></div><div class="field last_name"><div class="placeholder">Nom </div><input type="text"/></div></div><div class="field email"><div class="placeholder">Email </div><input type="text"/></div><div class="field phone"><div class="placeholder">Téléphone</div><input type="text"/></div><div class="field company_name"><div class="placeholder">Société/organisation</div><input type="text"/></div>';
+R.dom['contact_info_fields'] = '<div class="title">Informations de contact</div><div class="full_name"><div class="field first_name"><div class="placeholder">Prénom </div><input type="text"/></div><div class="field last_name"><div class="placeholder">Nom </div><input type="text"/></div></div><div class="field email"><div class="placeholder">Email </div><input type="text"/></div><div class="field phone"><div class="placeholder">Téléphone</div><input type="text"/></div><div class="field company_name"><div class="placeholder">Société/organisation</div><input type="text"/></div>';
 
 //////////////////////////////////////////////////
 // Compiled from src/dom/billing_info_fields.jade
